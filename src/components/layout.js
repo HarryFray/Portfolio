@@ -1,51 +1,82 @@
-/**
- * Layout component that queries for data
- * with Gatsby's useStaticQuery component
- *
- * See: https://www.gatsbyjs.org/docs/use-static-query/
- */
-
 import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
-
+import styled from "styled-components"
 import Header from "./header"
-import "./layout.css"
+import Navigation from "./navigation"
+
+const GlobalStyles = styled.div`
+  // heading
+  h1 {
+    sfont-size: 72px;
+    margin: 0;
+  }
+  // sub heading
+  h2 {
+    font-size: 36px;
+  }
+  // sub heading (greyed out)
+  h3 {
+    opacity: 0.7;
+    font-size: 48px;
+  }
+  // image copy
+  h4 {
+    font-size: 72px;
+    line-height: 120px;
+  }
+  // logo
+  h5 {
+    font-size: 54px;
+    line-height: 40px;
+    margin: 0px;
+  }
+  // All Icons
+  .Icon {
+    width: 80px;
+    height: 80px;
+  }
+
+  @media (min-width: 700px) {
+    // heading
+    h1 {
+      font-size: 36px;
+      margin: 0;
+    }
+    // sub heading
+    h2 {
+      font-size: 18px;
+    }
+    // sub heading (greyed out)
+    h3 {
+      font-size: 24px;
+    }
+    // image copy
+    h4 {
+      font-size: 36px;
+      line-height: 60px;
+    }
+    // logo
+    h5 {
+      font-size: 36px;
+      line-height: 26px;
+      margin: 0px;
+    }
+    // All Icons
+    .Icon {
+      width: 40px;
+      height: 40px;
+    }
+  }
+`
 
 const Layout = ({ children }) => {
-  const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `)
-
   return (
-    <>
-      <Header siteTitle={data.site.siteMetadata.title} />
-      <div
-        style={{
-          margin: `0 auto`,
-          maxWidth: 960,
-          padding: `0 1.0875rem 1.45rem`,
-        }}
-      >
-        <main>{children}</main>
-        <footer>
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
-        </footer>
-      </div>
-    </>
+    <GlobalStyles>
+      <Navigation />
+      <main>{children}</main>
+    </GlobalStyles>
   )
-}
-
-Layout.propTypes = {
-  children: PropTypes.node.isRequired,
 }
 
 export default Layout
