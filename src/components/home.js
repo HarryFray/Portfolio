@@ -26,6 +26,9 @@ const HomeBase = ({ className }) => {
 }
 
 const Home = styled(HomeBase)`
+  a {
+    margin: 0;
+  }
   div {
     box-sizing: border-box;
   }
@@ -34,7 +37,7 @@ const Home = styled(HomeBase)`
     background-color: white;
     height: 40vh;
     width: 100vw;
-    padding-left: 50px;
+    padding-left: 20px;
     position: absolute;
     z-index: 5;
   }

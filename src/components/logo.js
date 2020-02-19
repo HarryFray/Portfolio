@@ -16,12 +16,13 @@ const Logo = styled(({ className }) => {
   mix-blend-mode: difference;
   position: fixed;
   color: white;
+  left: 20px;
 
   .Harry {
-    margin-left: 28px;
+    margin-left: 18px;
   }
   .Fray {
-    margin-left: 56px;
+    margin-left: 30px;
   }
 
   @media (min-width: 700px) {

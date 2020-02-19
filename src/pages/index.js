@@ -1,10 +1,8 @@
 import React, { useEffect } from "react"
-import { Link } from "gatsby"
 import Home from "../components/home"
-
 import Layout from "../components/layout"
-import Image from "../components/image"
 import SEO from "../components/seo"
+import { css } from "@emotion/core"
 
 const IndexPage = () => {
   useEffect(() => {
@@ -20,8 +18,6 @@ const IndexPage = () => {
     <Layout>
       <SEO title="Home" />
       <Home path="/" />
-
-      {/* <Project path="project/:projectId" /> */}
     </Layout>
   )
 }

@@ -8,33 +8,33 @@ import Navigation from "./navigation"
 const GlobalStyles = styled.div`
   // heading
   h1 {
-    sfont-size: 72px;
+    font-size: 28px;
     margin: 0;
   }
   // sub heading
   h2 {
-    font-size: 36px;
+    font-size: 24px;
   }
   // sub heading (greyed out)
   h3 {
     opacity: 0.7;
-    font-size: 48px;
+    font-size: 18px;
   }
   // image copy
   h4 {
-    font-size: 72px;
-    line-height: 120px;
+    font-size: 28px;
+    line-height: 40px;
   }
   // logo
   h5 {
-    font-size: 54px;
-    line-height: 40px;
+    font-size: 24px;
+    line-height: 18px;
     margin: 0px;
   }
   // All Icons
   .Icon {
-    width: 80px;
-    height: 80px;
+    width: 40px;
+    height: 40px;
   }
 
   @media (min-width: 700px) {

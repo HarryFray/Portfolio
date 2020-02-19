@@ -1,15 +1,15 @@
-import React from "react";
-import styled from "styled-components";
+import React from "react"
+import styled from "styled-components"
 // import ArrowDownwardIcon from "@material-ui/icons/ArrowDownward";
 // import { animateScroll as scroll } from "react-scroll";
-import Default from "./default";
+import Default from "../components/default"
 
 /* reach router puts the url query on react props!!! */
 const ProjectBase = ({ projectId, className }) => {
   //   const handleScroll = () => {
   //     scroll.scrollToBottom();
   //   };
-
+  console.log("this is the: ", projectId)
   return (
     <div className={className}>
       <div className="Section">
@@ -20,8 +20,8 @@ const ProjectBase = ({ projectId, className }) => {
           </div> */}
       </div>
     </div>
-  );
-};
+  )
+}
 
 const Project = styled(ProjectBase)`
   width: 100vw;
@@ -45,5 +45,5 @@ const Project = styled(ProjectBase)`
       margin: 0;
     }
   }
-`;
-export default Project;
+`
+export default Project

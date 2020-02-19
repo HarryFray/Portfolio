@@ -33,7 +33,7 @@ const AboutMe = styled(AboutMeBase)`
     position: absolute;
     top: 15vh;
     text-align: start;
-    margin: 0 0 150px 40px;
+    margin: 0 0 20px 10px;
     bottom: 8px;
     left: 16px;
   }

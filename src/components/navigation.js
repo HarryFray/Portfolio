@@ -1,14 +1,14 @@
-import React, { useState, useEffect } from "react";
-import styled from "styled-components";
-import { Link, globalHistory } from "@reach/router";
-import Logo from "./logo.js";
-import { animateScroll as scroll } from "react-scroll";
-import MenuIcon from "@material-ui/icons/Menu";
+import React, { useState, useEffect } from "react"
+import styled from "styled-components"
+import { Link, globalHistory } from "@reach/router"
+import Logo from "./logo.js"
+import { animateScroll as scroll } from "react-scroll"
+import MenuIcon from "@material-ui/icons/Menu"
 
-import GitHubIcon from "@material-ui/icons/GitHub";
-import LinkedInIcon from "@material-ui/icons/LinkedIn";
-import YouTubeIcon from "@material-ui/icons/YouTube";
-import MessageIcon from "@material-ui/icons/Message";
+import GitHubIcon from "@material-ui/icons/GitHub"
+import LinkedInIcon from "@material-ui/icons/LinkedIn"
+import YouTubeIcon from "@material-ui/icons/YouTube"
+import MessageIcon from "@material-ui/icons/Message"
 
 const Wrapper = styled.div`
   .navOpen {
@@ -52,20 +52,19 @@ const Wrapper = styled.div`
 
   .SocialIcons a > * {
     color: white;
-    margin: 12px 28px 0 0;
+    margin: 4px 14px 0 0;
   }
 
   .Content {
     display: flex;
-    padding: 180px 40px 0 54px;
+    padding: 70px 0 0 24px;
     justify-content: space-between;
   }
-`;
+`
 
 const HeaderTodo = styled.div`
   position: absolute;
   z-index: 50;
-  padding-left: 54px;
   mix-blend-mode: exclusion;
 
   .MenuIcon {
@@ -74,18 +73,18 @@ const HeaderTodo = styled.div`
     position: fixed;
     color: white;
   }
-`;
+`
 
 const Header = () => {
-  const [navOpen, setNavOpen] = useState(false);
+  const [navOpen, setNavOpen] = useState(false)
 
   useEffect(() => {
     globalHistory.listen(({ action }) => {
       if (action === "PUSH") {
-        setNavOpen(false);
+        setNavOpen(false)
       }
-    });
-  });
+    })
+  })
 
   return (
     <>
@@ -94,8 +93,8 @@ const Header = () => {
         <MenuIcon
           className="MenuIcon Icon"
           onClick={() => {
-            scroll.scrollToTop();
-            setNavOpen(!navOpen);
+            scroll.scrollToTop()
+            setNavOpen(!navOpen)
           }}
         />
       </HeaderTodo>
@@ -166,7 +165,7 @@ const Header = () => {
         </div>
       </Wrapper>
     </>
-  );
-};
+  )
+}
 
-export default Header;
+export default Header
