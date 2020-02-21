@@ -102,7 +102,6 @@ const Header = () => {
         <div className={navOpen ? "navOpen" : "navClosed"}>
           <div className="Content">
             <div>
-              <h2>Menu</h2>
               <ul>
                 <li>
                   <Link to="about-me">
