@@ -42,17 +42,28 @@ const TextBox = styled("div")`
 `
 
 const Card = ({ title, link, description, img, slug }) => {
-  const { image } = useStaticQuery(graphql`
+  const { allImageSharp } = useStaticQuery(graphql`
     query {
-      image: file(relativePath: { eq: "img_hs.jpeg" }) {
-        sharp: childImageSharp {
-          fluid {
-            ...GatsbyImageSharpFluid_withWebp
+      allImageSharp {
+        images: edges {
+          image: node {
+            fluid {
+              originalName
+              ...GatsbyImageSharpFluid_withWebp
+            }
           }
         }
       }
     }
   `)
+
+  /* TODO: currently pulling in all images for each image this should
+   be elevated to parent */
+  const getImage = img => {
+    return allImageSharp.images.filter(
+      ({ image }) => image.fluid.originalName === img
+    )[0]
+  }
 
   return (
     <a
@@ -61,7 +72,7 @@ const Card = ({ title, link, description, img, slug }) => {
       rel="noopener noreferrer"
       style={{ textDecoration: "none" }}
     >
-      <StyledBackgroundImage fluid={image.sharp.fluid} fadeIn="soft">
+      <StyledBackgroundImage fluid={getImage(img).image.fluid} fadeIn="soft">
         <TextBox>
           <h3>{title}</h3>
           <h4>{description}</h4>
