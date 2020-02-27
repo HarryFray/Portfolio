@@ -1,6 +1,5 @@
 import React from "react"
 import styled from "styled-components"
-// import { PROJECTS } from "./gallery";
 import { Link } from "@reach/router"
 
 const NON_POJECT_PAGES = [
@@ -58,3 +57,19 @@ const Default = styled(DefaultBase)`
 `
 
 export default Default
+
+function properFractions(den) {
+  let total = 0
+  for (let neum = 1; neum < den; neum++) {
+    let valid = true
+    for (let i = 2; i < neum; i++) {
+      if (den % i === 0 && neum % i === 0) {
+        valid = false
+      }
+    }
+    if (valid) {
+      total++
+    }
+  }
+  return total
+}

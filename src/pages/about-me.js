@@ -9,7 +9,7 @@ const AboutMeBase = ({ className }) => {
     <Layout>
       <SEO title="Page two" />
       <div className={className}>
-        <dic className="Copy">
+        <div className="Copy">
           <h3>About Me</h3>
           <h4>
             I’m a creator with a deep passion for translating user pains and
@@ -17,7 +17,7 @@ const AboutMeBase = ({ className }) => {
             collaborative environments where there are challenging problems to
             be solved.
           </h4>
-        </dic>
+        </div>
       </div>
 
       <Link to="/">Go back to the homepage</Link>
@@ -36,7 +36,6 @@ const AboutMe = styled(AboutMeBase)`
     position: absolute;
     top: 15vh;
     text-align: start;
-    margin: 0 0 20px 10px;
     bottom: 8px;
     left: 16px;
   }

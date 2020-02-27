@@ -11,4 +11,3 @@
 <h3 align="center">
 🚧 A Portfolio site utilizing a headless CMS... under construction 🚧
 </h3>
-

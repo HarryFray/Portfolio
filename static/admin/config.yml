@@ -1,7 +1,7 @@
 backend:
   name: github
   repo: HarryFray/Portfolio
-media_folder: static/assets
+media_folder: /src/images
 public_folder: /assets
 collections:
   - name: project
@@ -12,11 +12,11 @@ collections:
       - { name: slug, label: Slug }
       - { name: date, label: Date, widget: datetime }
       - { name: title, label: Title }
-      - { name: 'subTitle', label: 'Sub Title'}
+      - { name: subTitle, label: Sub Title}
       - { name: body, label: Body, widget: markdown }
       - { 
-        name: "backgroundimage",
-        label: "Featured Image",
-        widget: "image",
-        default: "/src/images",
+        name: backgroundimage,
+        label: Featured Image,
+        widget: image,
+        default: /src/images,
  }

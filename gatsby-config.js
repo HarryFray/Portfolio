@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    title: `Nicholas Harry Fray`,
+    description: `Nicholas Harry Fray Portfolio Site`,
+    author: `@HarryFray`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -10,6 +10,11 @@ module.exports = {
     `gatsby-plugin-material-ui`,
     `gatsby-background-image`,
     `gatsby-transformer-remark`,
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-sharp`,
+    `gatsby-plugin-emotion`,
+    `gatsby-plugin-netlify-cms`,
+    `gatsby-plugin-offline`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -24,17 +29,10 @@ module.exports = {
         path: `${__dirname}/src/projects`,
       },
     },
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
-    `gatsby-plugin-emotion`,
-    `gatsby-plugin-netlify-cms`,
     {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
-        fonts: [
-          `Asap`,
-          `source sans pro\:300,400,400i,700`, // you can also specify font weights and styles
-        ],
+        fonts: [`Asap`, `source sans pro\:300,400,400i,700`],
         display: "swap",
       },
     },
@@ -47,11 +45,8 @@ module.exports = {
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/images/NF.png`, // This path is relative to the root of the site.
+        icon: `src/images/NF.png`,
       },
     },
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.dev/offline
-    // `gatsby-plugin-offline`,
   ],
 }

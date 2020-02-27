@@ -4,6 +4,7 @@ import Gallery from "./gallery"
 import ArrowForwardIcon from "@material-ui/icons/ArrowForward"
 import { Link } from "@reach/router"
 
+/* ALL HARD CODED CONTENT SOON TO BE MANAGED BY NETLIFY CMS */
 export const PROJECTS = [
   {
     title: "Kansas City Reality",

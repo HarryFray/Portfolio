@@ -10,7 +10,7 @@ const GlobalStyles = styled.div`
   }
   // sub heading
   h2 {
-    font-size: 24px;
+    font-size: 12px;
   }
   // sub heading (greyed out)
   h3 {
@@ -19,7 +19,7 @@ const GlobalStyles = styled.div`
   }
   // image copy
   h4 {
-    font-size: 28px;
+    font-size: 24px;
     line-height: 40px;
   }
   // logo
@@ -30,8 +30,8 @@ const GlobalStyles = styled.div`
   }
   // All Icons
   .Icon {
-    width: 40px;
-    height: 40px;
+    width: 30px;
+    height: 30px;
   }
 
   @media (min-width: 700px) {

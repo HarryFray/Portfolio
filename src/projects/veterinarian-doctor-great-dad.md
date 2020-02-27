@@ -7,4 +7,5 @@ subTitle: >-
   and dad
 backgroundimage: /assets/scott.jpg
 ---
+
 Here is some copy about my dad to confirm it's accessible

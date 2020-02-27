@@ -12,14 +12,18 @@ import MessageIcon from "@material-ui/icons/Message"
 
 const Wrapper = styled.div`
   .navOpen {
-    height: 60vh;
     background-color: black;
-    overflow-y: hidden;
-    max-height: 60vh; /* approximate max height */
-
+    overflow-y: hidden;    
     transition-property: all;
     transition-duration: 1s;
     transition-timing-function: cubic-bezier(0, 1, 1, 1);
+
+    height: 60vh;
+    max-height: 60vh; /* approximate max height */
+    @media (min-width: 700px) {
+      height: 50vh;
+      max-height: 50vh; /* approximate max height */
+    }
   }
 
   .navClosed {
@@ -37,7 +41,7 @@ const Wrapper = styled.div`
     list-style: none;
     li {
 
-      padding: 16px 0;
+      padding: 8px 0;
       color: white;
     }
   }
@@ -57,7 +61,7 @@ const Wrapper = styled.div`
 
   .Content {
     display: flex;
-    padding: 70px 0 0 24px;
+    padding: 120px 0 0 24px;
     justify-content: space-between;
   }
 `

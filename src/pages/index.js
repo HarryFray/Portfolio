@@ -2,7 +2,6 @@ import React, { useEffect } from "react"
 import Home from "../components/home"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import { css } from "@emotion/core"
 
 const IndexPage = () => {
   useEffect(() => {

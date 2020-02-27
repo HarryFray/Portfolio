@@ -1,11 +1,12 @@
 import React from "react"
 import styled from "styled-components"
 import ArrowDownwardIcon from "@material-ui/icons/ArrowDownward"
-import { animateScroll as scroll } from "react-scroll"
+// import { animateScroll as scroll } from "react-scroll"
 import Default from "../components/default"
 import { graphql } from "gatsby"
+import BackgroundImage from "gatsby-background-image"
 
-export const data = graphql`
+export const x = graphql`
   query($slug: String!) {
     markdownRemark(frontmatter: { slug: { eq: $slug } }) {
       frontmatter {
@@ -24,24 +25,25 @@ const ProjectBase = ({ data, className }) => {
   //     scroll.scrollToBottom()
   //   }
 
-  console.log("this is the: ", data)
-
   const {
     title,
     slug,
     subTitle,
     backgroundimage,
   } = data.markdownRemark.frontmatter
+
+  console.log("this is the: ", backgroundimage)
+
   return (
     <div className={className}>
-      <div className="Section">
-        {/* <Default projectId={projectId} /> */}
-        <p>{title}</p>
-        <div className="ScrollCTA">
-          <ArrowDownwardIcon className="Icon" />
-          <h3>Scroll Down</h3>
-        </div>
+      {/* <BackgroundImage> */}
+      {/* <Default projectId={projectId} /> */}
+      <p>{title}</p>
+      <div className="ScrollCTA">
+        <ArrowDownwardIcon className="Icon" />
+        <h3>Scroll Down</h3>
       </div>
+      {/* </BackgroundImage> */}
     </div>
   )
 }
@@ -52,7 +54,7 @@ const Project = styled(ProjectBase)`
   background-color: white;
   position: fixed;
 
-  .Section {
+  ${BackgroundImage} {
     height: 100vh;
   }
 
