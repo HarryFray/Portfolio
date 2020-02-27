@@ -9,8 +9,13 @@ collections:
     folder: src/projects
     create: true
     fields:
-      - { name: path, label: Path }
+      - { name: slug, label: Slug }
       - { name: date, label: Date, widget: datetime }
       - { name: title, label: Title }
-      - { name: 'subTitle', label: 'subTitle'}
+      - { name: 'subTitle', label: 'Sub Title'}
       - { name: body, label: Body, widget: markdown }
+      - { 
+        name: "backgroundimage",
+        label: "Featured Image",
+        widget: "image",
+        default: "/src/images" }
