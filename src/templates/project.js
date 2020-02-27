@@ -3,36 +3,45 @@ import styled from "styled-components"
 import ArrowDownwardIcon from "@material-ui/icons/ArrowDownward"
 import { animateScroll as scroll } from "react-scroll"
 import Default from "../components/default"
-import gql from "gatsby"
+import { graphql } from "gatsby"
 
-export const data = gql`
-  query {
-    markdownRemark {
-      html
+export const data = graphql`
+  query($slug: String!) {
+    markdownRemark(frontmatter: { slug: { eq: $slug } }) {
       frontmatter {
         title
+        slug
         subTitle
-        date
+        backgroundimage
       }
     }
   }
 `
 
 /* reach router puts the url query on react props!!! */
-const ProjectBase = ({ data }) => {
+const ProjectBase = ({ data, className }) => {
   //   const handleScroll = () => {
   //     scroll.scrollToBottom()
   //   }
+
   console.log("this is the: ", data)
+
+  const {
+    title,
+    slug,
+    subTitle,
+    backgroundimage,
+  } = data.markdownRemark.frontmatter
   return (
     <div className={className}>
-      {/* <div className="Section">
-        <Default projectId={projectId} />
-        <div className="ScrollCTA" onClick={handleScroll}>
+      <div className="Section">
+        {/* <Default projectId={projectId} /> */}
+        <p>{title}</p>
+        <div className="ScrollCTA">
           <ArrowDownwardIcon className="Icon" />
           <h3>Scroll Down</h3>
         </div>
-      </div> */}
+      </div>
     </div>
   )
 }

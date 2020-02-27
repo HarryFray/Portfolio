@@ -1,29 +1,31 @@
-// exports.createPages = async ({ actions, graphql, reporter }) => {
-//     const result = await graphql(`
-//       query {
-//         allMdx {
-//           nodes {
-//             frontmatter {
-//               slug
-//             }
-//           }
-//         }
-//       }
-//     `);
+exports.createPages = async ({ actions, graphql, reporter }) => {
+  const result = await graphql(`
+    query {
+      allMarkdownRemark {
+        edges {
+          node {
+            frontmatter {
+              slug
+            }
+          }
+        }
+      }
+    }
+  `)
 
-//     if (result.error) {
-//       reporter.panic('failed to create posts: ', result.error);
-//     }
+  if (result.error) {
+    reporter.panic("failed to create project: ", result.error)
+  }
 
-//     const posts = result.data.allMdx.nodes;
+  const projects = result.data.allMarkdownRemark.edges
 
-//     posts.forEach(post => {
-//       actions.createPage({
-//         path: post.frontmatter.slug,
-//         component: require.resolve('./src/templates/post.js'),
-//         context: {
-//           slug: `${post.frontmatter.slug}`,
-//         },
-//       });
-//     });
-//   };
+  projects.forEach(project => {
+    actions.createPage({
+      path: project.node.frontmatter.slug,
+      component: require.resolve("./src/templates/project.js"),
+      context: {
+        slug: `${project.node.frontmatter.slug}`,
+      },
+    })
+  })
+}
