@@ -6,6 +6,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
           node {
             frontmatter {
               slug
+              backgroundimage
             }
           }
         }
@@ -25,6 +26,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       component: require.resolve("./src/templates/project.js"),
       context: {
         slug: `${project.node.frontmatter.slug}`,
+        img: `me.png`,
       },
     })
   })

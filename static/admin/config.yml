@@ -1,7 +1,7 @@
 backend:
   name: github
   repo: HarryFray/Portfolio
-media_folder: images
+media_folder: src/images
 public_folder: src
 collections:
   - name: project
@@ -18,5 +18,5 @@ collections:
         name: backgroundimage,
         label: Featured Image,
         widget: image,
-        default: images,
+        default: src/images,
  }

@@ -7,13 +7,20 @@ import { graphql } from "gatsby"
 import BackgroundImage from "gatsby-background-image"
 
 export const x = graphql`
-  query($slug: String!) {
+  query($slug: String!, $img: String!) {
     markdownRemark(frontmatter: { slug: { eq: $slug } }) {
       frontmatter {
         title
         slug
         subTitle
         backgroundimage
+      }
+    }
+    file(relativePath: { eq: $img }) {
+      childImageSharp {
+        fluid {
+          ...GatsbyImageSharpFluid_withWebp
+        }
       }
     }
   }
@@ -24,15 +31,14 @@ const ProjectBase = ({ data, className }) => {
   //   const handleScroll = () => {
   //     scroll.scrollToBottom()
   //   }
-
+  console.log("NICKS LOVELY DATA: ", data)
+  return <div>testing</div>
   const {
     title,
     slug,
     subTitle,
     backgroundimage,
   } = data.markdownRemark.frontmatter
-
-  console.log("this is the: ", backgroundimage)
 
   return (
     <div className={className}>
