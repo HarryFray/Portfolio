@@ -3,49 +3,24 @@ import styled from "styled-components"
 import Gallery from "./gallery"
 import ArrowForwardIcon from "@material-ui/icons/ArrowForward"
 import { Link } from "@reach/router"
+import { useStaticQuery, graphql } from "gatsby"
 
-/* ALL HARD CODED CONTENT SOON TO BE MANAGED BY NETLIFY CMS */
-export const PROJECTS = [
-  {
-    title: "Kansas City Reality",
-    slug: "kansas-city-reality",
-    link: "https://www.bhhskcrealty.com/",
-    description: "All in one site for purchasing homes in KC",
-    img: "img_merlin.jpeg",
-    key: 0,
-  },
-  {
-    title: "Merlin CMS",
-    slug: "merlin-cms",
-    link: "https://merlinlabs.gg/",
-    description: "Content managment system for home brokerages",
-    img: "img_hs.jpeg",
-    key: 1,
-  },
-  {
-    title: "Live Draft X",
-    slug: "live-draft-x",
-    description: "Fantasy football draft taking place on a single machine",
-    img: "img_nfl.jpeg",
-    key: 2,
-  },
-  {
-    title: "AccuStorm",
-    slug: "accustorm",
-    description: "Visualize hail storms over property data",
-    img: "img_srorm.jpeg",
-    key: 3,
-  },
-  {
-    title: "REX",
-    slug: "rex",
-    description: "Recommendation tracking for songs, books, and food",
-    img: "img_rex.jpeg",
-    key: 4,
-  },
-]
+const Home = styled(({ className }) => {
+  const { allMarkdownRemark } = useStaticQuery(graphql`
+    query {
+      allMarkdownRemark {
+        nodes {
+          frontmatter {
+            title
+            subTitle
+            backgroundimage
+            slug
+          }
+        }
+      }
+    }
+  `)
 
-const HomeBase = ({ className }) => {
   return (
     <div className={className}>
       <div className="top">
@@ -61,12 +36,10 @@ const HomeBase = ({ className }) => {
           </Link>
         </div>
       </div>
-      <Gallery projects={PROJECTS} />
+      <Gallery projects={allMarkdownRemark.nodes} />
     </div>
   )
-}
-
-const Home = styled(HomeBase)`
+})`
   a {
     margin: 0;
   }

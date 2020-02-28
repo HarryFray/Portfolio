@@ -5,10 +5,9 @@ import Card from "./card"
 const Gallery = styled(({ projects, className }) => {
   return (
     <div className={className}>
-      {projects &&
-        projects.map(item => {
-          return <Card {...item} />
-        })}
+      {projects.map(project => (
+        <Card key={project.frontmatter.slug} {...project.frontmatter} />
+      ))}
     </div>
   )
 })`

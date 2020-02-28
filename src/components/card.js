@@ -2,6 +2,7 @@ import React from "react"
 import styled from "styled-components"
 import BackgroundImage from "gatsby-background-image"
 import { useStaticQuery, graphql } from "gatsby"
+import { Link } from "gatsby"
 
 const StyledBackgroundImage = styled(BackgroundImage)`
   width: 100vw;
@@ -40,7 +41,7 @@ const TextBox = styled("div")`
   }
 `
 
-const Card = ({ title, link, description, img, slug }) => {
+const Card = ({ title, subTitle, backgroundimage, slug }) => {
   const { allImageSharp } = useStaticQuery(graphql`
     query {
       allImageSharp {
@@ -58,6 +59,7 @@ const Card = ({ title, link, description, img, slug }) => {
 
   /* TODO: currently pulling in all images for each image this should
    be elevated to parent */
+  const img = backgroundimage.split("/").reverse()[0]
   const getImage = img => {
     return allImageSharp.images.filter(
       ({ image }) => image.fluid.originalName === img
@@ -65,19 +67,14 @@ const Card = ({ title, link, description, img, slug }) => {
   }
 
   return (
-    <a
-      href={link}
-      target="_blank"
-      rel="noopener noreferrer"
-      style={{ textDecoration: "none" }}
-    >
+    <Link to={slug} style={{ textDecoration: "none" }}>
       <StyledBackgroundImage fluid={getImage(img).image.fluid} fadeIn="soft">
         <TextBox>
           <h3>{title}</h3>
-          <h4>{description}</h4>
+          <h4>{subTitle}</h4>
         </TextBox>
       </StyledBackgroundImage>
-    </a>
+    </Link>
   )
 }
 

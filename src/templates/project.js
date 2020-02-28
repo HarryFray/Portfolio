@@ -2,7 +2,8 @@ import React from "react"
 import styled from "styled-components"
 import ArrowDownwardIcon from "@material-ui/icons/ArrowDownward"
 // import { animateScroll as scroll } from "react-scroll"
-import Default from "../components/default"
+import Layout from "../components/layout"
+import SEO from "../components/seo"
 import { graphql } from "gatsby"
 import BackgroundImage from "gatsby-background-image"
 
@@ -27,34 +28,26 @@ export const x = graphql`
 `
 
 /* reach router puts the url query on react props!!! */
-const ProjectBase = ({ data, className }) => {
+const Project = styled(({ data, className }) => {
   //   const handleScroll = () => {
   //     scroll.scrollToBottom()
   //   }
-  console.log("NICKS LOVELY DATA: ", data)
-  return <div>testing</div>
-  const {
-    title,
-    slug,
-    subTitle,
-    backgroundimage,
-  } = data.markdownRemark.frontmatter
+
+  const { title, slug, subTitle } = data.markdownRemark.frontmatter
 
   return (
-    <div className={className}>
-      {/* <BackgroundImage> */}
-      {/* <Default projectId={projectId} /> */}
-      <p>{title}</p>
-      <div className="ScrollCTA">
-        <ArrowDownwardIcon className="Icon" />
-        <h3>Scroll Down</h3>
-      </div>
-      {/* </BackgroundImage> */}
-    </div>
+    <Layout>
+      <SEO title={title} />
+      <BackgroundImage fluid={data.file.childImageSharp.fluid}>
+        <p>{title}</p>
+        <div className="ScrollCTA">
+          <ArrowDownwardIcon className="Icon" />
+          <h3>Scroll Down</h3>
+        </div>
+      </BackgroundImage>
+    </Layout>
   )
-}
-
-const Project = styled(ProjectBase)`
+})`
   width: 100vw;
   height: 100vh;
   background-color: white;

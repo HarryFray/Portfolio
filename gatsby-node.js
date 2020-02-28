@@ -21,12 +21,17 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   const projects = result.data.allMarkdownRemark.edges
 
   projects.forEach(project => {
+    const { backgroundimage, slug } = project.node.frontmatter
+    /* TODO: currently gets image name off file path better option
+    would be saving image names directly */
+    const img = backgroundimage.split("/").reverse()[0]
+
     actions.createPage({
       path: project.node.frontmatter.slug,
       component: require.resolve("./src/templates/project.js"),
       context: {
-        slug: `${project.node.frontmatter.slug}`,
-        img: `me.png`,
+        slug,
+        img,
       },
     })
   })
