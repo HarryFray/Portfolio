@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import ArrowDownwardIcon from "@material-ui/icons/ArrowDownward"
-// import { animateScroll as scroll } from "react-scroll"
+import { animateScroll as scroll } from "react-scroll"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { graphql } from "gatsby"
@@ -16,6 +16,7 @@ export const x = graphql`
         subTitle
         backgroundimage
       }
+      html
     }
     file(relativePath: { eq: $img }) {
       childImageSharp {
@@ -29,45 +30,65 @@ export const x = graphql`
 
 /* reach router puts the url query on react props!!! */
 const Project = styled(({ data, className }) => {
-  //   const handleScroll = () => {
-  //     scroll.scrollToBottom()
-  //   }
+  const handleScroll = () => {
+    scroll.scrollToBottom()
+  }
 
-  const { title, slug, subTitle } = data.markdownRemark.frontmatter
+  const { html, frontmatter } = data.markdownRemark
+  const { title, subTitle } = frontmatter
 
   return (
     <Layout>
-      <SEO title={title} />
-      <BackgroundImage fluid={data.file.childImageSharp.fluid}>
-        <p>{title}</p>
-        <div className="ScrollCTA">
-          <ArrowDownwardIcon className="Icon" />
-          <h3>Scroll Down</h3>
+      <SEO title={title} description={subTitle + title} />
+      <div className={className}>
+        <div className="Section">
+          <h1>{title}</h1>
+          <h2>{subTitle}</h2>
+          <h5
+            className="blog-post-content"
+            dangerouslySetInnerHTML={{ __html: html }}
+          />
+          <div className="ScrollCTA" onClick={handleScroll}>
+            <ArrowDownwardIcon className="Icon" />
+            <h3>Scroll Down</h3>
+          </div>
         </div>
-      </BackgroundImage>
+        <BackgroundImage
+          className="Section"
+          fluid={data.file.childImageSharp.fluid}
+        ></BackgroundImage>
+      </div>
     </Layout>
   )
 })`
-  width: 100vw;
-  height: 100vh;
-  background-color: white;
-  position: fixed;
-
-  ${BackgroundImage} {
+  .Section {
     height: 100vh;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  h1,
+  h2 {
+    text-align: center;
+  }
+
+  h5 {
+    margin: 16px;
+    line-height: 32px;
+    li {
+      padding-bottom: 8px;
+    }
   }
 
   .ScrollCTA {
-    position: absolute;
+    position: fixed;
     bottom: 0;
-    display: flex;
     width: 100vw;
+    display: flex;
+    flex-direction: column;
     align-items: center;
-    margin: 20px;
-    flex-direction: column-reverse;
-    h3 {
-      margin: 0;
-    }
   }
 `
 export default Project

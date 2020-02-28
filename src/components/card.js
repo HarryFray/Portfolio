@@ -3,6 +3,7 @@ import styled from "styled-components"
 import BackgroundImage from "gatsby-background-image"
 import { useStaticQuery, graphql } from "gatsby"
 import { Link } from "gatsby"
+// import { Chip } from "@material-ui/core"
 
 const StyledBackgroundImage = styled(BackgroundImage)`
   width: 100vw;
@@ -72,6 +73,7 @@ const Card = ({ title, subTitle, backgroundimage, slug }) => {
         <TextBox>
           <h3>{title}</h3>
           <h4>{subTitle}</h4>
+          {/* <Chip label="React" /> */}
         </TextBox>
       </StyledBackgroundImage>
     </Link>
