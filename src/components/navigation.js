@@ -20,7 +20,7 @@ const Wrapper = styled.div`
 
     height: 60vh;
     max-height: 60vh; /* approximate max height */
-    @media (min-width: 700px) {
+    @media (min-width: 450px) {
       height: 50vh;
       max-height: 50vh; /* approximate max height */
     }

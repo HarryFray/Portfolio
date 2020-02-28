@@ -5,7 +5,7 @@ import SEO from "../components/seo"
 
 const IndexPage = () => {
   useEffect(() => {
-    if (window.screen.width > 700) {
+    if (window.screen.width > 450) {
       document.body.style.overflow = "hidden"
     }
     document.body.style.margin = 0

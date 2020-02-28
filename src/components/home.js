@@ -59,7 +59,7 @@ const Home = styled(({ className }) => {
   .SubHeading {
     .AboutMe {
       margin: 12px;
-      @media (min-width: 700px) {
+      @media (min-width: 450px) {
         margin-top: 100px;
       }
       text-decoration: none;
@@ -69,7 +69,7 @@ const Home = styled(({ className }) => {
     }
     position: absolute;
     top: 12vh;
-    @media (min-width: 700px) {
+    @media (min-width: 450px) {
       top: 18vh;
     }
     display: flex;

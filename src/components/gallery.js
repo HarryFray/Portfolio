@@ -15,10 +15,10 @@ const Gallery = styled(({ projects, className }) => {
   z-index: 5;
   position: absolute;
   margin-top: 40vh;
-
-  @media (min-width: 700px) {
+  @media (min-width: 450px) {
+    margin-top: 0px;
+    top: 50vh;
     height: 100vw;
-    margin-top: 50vh;
     left: -50vh;
     ::-webkit-scrollbar {
       display: none;

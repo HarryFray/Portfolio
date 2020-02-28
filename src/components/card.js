@@ -8,7 +8,7 @@ const StyledBackgroundImage = styled(BackgroundImage)`
   width: 100vw;
   height: 100vw;
 
-  @media (min-width: 700px) {
+  @media (min-width: 450px) {
     background-size: 50vh 50vh;
     transform: rotate(90deg);
     width: 50vh;

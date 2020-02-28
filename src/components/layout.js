@@ -34,7 +34,7 @@ const GlobalStyles = styled.div`
     height: 30px;
   }
 
-  @media (min-width: 700px) {
+  @media (min-width: 450px) {
     // heading
     h1 {
       font-size: 36px;

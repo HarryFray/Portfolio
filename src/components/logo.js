@@ -25,7 +25,7 @@ const Logo = styled(({ className }) => {
     margin-left: 30px;
   }
 
-  @media (min-width: 700px) {
+  @media (min-width: 450px) {
     .Harry {
       margin-left: 26px;
     }
