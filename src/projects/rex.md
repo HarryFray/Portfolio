@@ -3,7 +3,7 @@ slug: rex
 date: 2020-02-28T18:04:51.393Z
 title: Rex
 subTitle: 'Recommendation tracking for songs, books, and food'
-tech: 'React, Yelp API, Last.FM API, MovieDB API, Redux, Thunk'
+tech: 'React,Yelp API,Last.FM API,MovieDB API,Redux,Thunk'
 backgroundimage: src/img_rex.jpeg
 ---
 Implemented Yelp, Last.FM and MovieDB APIs using request, providing a uniform user experience 
