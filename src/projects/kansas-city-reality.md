@@ -3,10 +3,13 @@ slug: kansas-city-reality
 date: 2020-02-28T18:07:12.299Z
 title: Kansas City Reality
 subTitle: All in one site for purchasing homes in KC
+tech: >-
+  React,TypeScript,Apollo,Graphql,Algolia,Auth0,Circle CI,Jest,React Testing
+  Library,Mapbox
 backgroundimage: src/img_merlin.jpeg
 ---
+Implemented tests focusing on linting, unit, and end to end testing
 
+Created a configurable filtering system for the search page capable of filtering over 20 fields
 
-* consolidated and refactored a large portion of the search page for readability
-* created a seamless system for filtering homes
-* extended the search bar for accessibility purposes
+Consolidated contact forms across site improving speed of development
