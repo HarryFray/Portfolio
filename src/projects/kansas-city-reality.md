@@ -4,8 +4,8 @@ date: 2020-02-28T18:07:12.299Z
 title: Kansas City Reality
 subTitle: All in one site for purchasing homes in KC
 tech: >-
-  React,TypeScript,Apollo,Graphql,Algolia,Auth0,Circle CI,Jest,React Testing
-  Library,Mapbox
+  React,Next,TypeScript,Apollo,Graphql,Algolia,Auth0,Circle CI,Jest,React
+  Testing Library,Mapbox
 backgroundimage: src/img_merlin.jpeg
 ---
 Implemented tests focusing on linting, unit, and end to end testing
