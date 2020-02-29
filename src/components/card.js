@@ -3,7 +3,7 @@ import styled from "styled-components"
 import BackgroundImage from "gatsby-background-image"
 import { useStaticQuery, graphql } from "gatsby"
 import { Link } from "gatsby"
-// import { Chip } from "@material-ui/core"
+import Chips from "./chips"
 
 const StyledBackgroundImage = styled(BackgroundImage)`
   width: 100vw;
@@ -25,8 +25,8 @@ const TextBox = styled("div")`
   color: white;
   background-image: linear-gradient(
     to top,
-    rgba(0, 0, 0, 0.5) 2rem,
-    rgba(0, 0, 0, 0.5)
+    rgba(0, 0, 0, 0.3) 2rem,
+    rgba(0, 0, 0, 0.7)
   );
   display: flex;
   flex-direction: column;
@@ -42,7 +42,7 @@ const TextBox = styled("div")`
   }
 `
 
-const Card = ({ title, subTitle, backgroundimage, slug }) => {
+const Card = ({ title, subTitle, backgroundimage, slug, tech }) => {
   const { allImageSharp } = useStaticQuery(graphql`
     query {
       allImageSharp {
@@ -73,8 +73,8 @@ const Card = ({ title, subTitle, backgroundimage, slug }) => {
         <TextBox>
           <h3>{title}</h3>
           <h4>{subTitle}</h4>
-          {/* <Chip label="React" /> */}
         </TextBox>
+        <Chips tech={tech} />
       </StyledBackgroundImage>
     </Link>
   )

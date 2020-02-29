@@ -15,6 +15,7 @@ const Home = styled(({ className }) => {
             subTitle
             backgroundimage
             slug
+            tech
           }
         }
       }

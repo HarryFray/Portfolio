@@ -2,7 +2,8 @@ backend:
   name: github
   repo: HarryFray/Portfolio
 media_folder: src/images
-public_folder: src
+# public was just source if something goes wrong with next upload
+public_folder: src/images
 collections:
   - name: project
     label: project

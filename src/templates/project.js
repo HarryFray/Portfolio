@@ -1,7 +1,5 @@
 import React from "react"
 import styled from "styled-components"
-import ArrowDownwardIcon from "@material-ui/icons/ArrowDownward"
-import { animateScroll as scroll } from "react-scroll"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { graphql } from "gatsby"
@@ -12,9 +10,8 @@ export const x = graphql`
     markdownRemark(frontmatter: { slug: { eq: $slug } }) {
       frontmatter {
         title
-        slug
         subTitle
-        backgroundimage
+        tech
       }
       html
     }
@@ -27,34 +24,24 @@ export const x = graphql`
     }
   }
 `
-
-/* reach router puts the url query on react props!!! */
 const Project = styled(({ data, className }) => {
-  const handleScroll = () => {
-    scroll.scrollToBottom()
-  }
-
   const { html, frontmatter } = data.markdownRemark
-  const { title, subTitle } = frontmatter
+  const { title, subTitle, tech } = frontmatter
 
   return (
     <Layout>
-      <SEO title={title} description={subTitle + title} />
+      <SEO title={title} description={`${subTitle} ${title} ${tech}`} />
       <div className={className}>
         <div className="Section">
           <h1>{title}</h1>
           <h2>{subTitle}</h2>
-          <h5
+          <h3
             className="blog-post-content"
             dangerouslySetInnerHTML={{ __html: html }}
           />
-          <div className="ScrollCTA" onClick={handleScroll}>
-            <ArrowDownwardIcon className="Icon" />
-            <h3>Scroll Down</h3>
-          </div>
         </div>
         <BackgroundImage
-          className="Section"
+          className="Image"
           fluid={data.file.childImageSharp.fluid}
         ></BackgroundImage>
       </div>
@@ -62,11 +49,19 @@ const Project = styled(({ data, className }) => {
   )
 })`
   .Section {
-    height: 100vh;
+    padding-top: 80px;
+    height: 60vh;
     background-color: white;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: start;
+  }
+  .Image {
+    height: 40vh;
+    left: 0;
+    width: 100vw;
+    bottom: 0;
+    position: fixed !important;
   }
 
   h1,
@@ -74,9 +69,10 @@ const Project = styled(({ data, className }) => {
     text-align: center;
   }
 
-  h5 {
-    margin: 16px;
+  h3 {
+    margin: 0 16px;
     line-height: 32px;
+    text-align: center;
     li {
       padding-bottom: 8px;
     }
