@@ -68,15 +68,15 @@ const Card = ({ title, subTitle, backgroundimage, slug, tech }) => {
   }
 
   return (
-    <Link to={slug} style={{ textDecoration: "none" }}>
-      <StyledBackgroundImage fluid={getImage(img).image.fluid} fadeIn="soft">
+    <StyledBackgroundImage fluid={getImage(img).image.fluid} fadeIn="soft">
+      <Link to={slug} style={{ textDecoration: "none" }}>
         <TextBox>
           <h3>{title}</h3>
           <h4>{subTitle}</h4>
         </TextBox>
-        <Chips tech={tech} />
-      </StyledBackgroundImage>
-    </Link>
+      </Link>
+      <Chips tech={tech} />
+    </StyledBackgroundImage>
   )
 }
 

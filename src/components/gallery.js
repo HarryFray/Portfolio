@@ -17,9 +17,9 @@ const Gallery = styled(({ projects, className }) => {
   margin-top: 40vh;
   @media (min-width: 450px) {
     margin-top: 0px;
-    top: 50vh;
+    width: 100vh;
     height: 100vw;
-    left: -50vh;
+    left: -100vh;
     ::-webkit-scrollbar {
       display: none;
     }
