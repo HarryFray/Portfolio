@@ -66,7 +66,7 @@ const Wrapper = styled.div`
   }
 `
 
-const HeaderTodo = styled.div`
+const HeaderVisible = styled.div`
   position: absolute;
   z-index: 50;
   mix-blend-mode: exclusion;
@@ -92,7 +92,7 @@ const Header = () => {
 
   return (
     <>
-      <HeaderTodo>
+      <HeaderVisible>
         <Logo />
         <MenuIcon
           className="MenuIcon Icon"
@@ -101,7 +101,7 @@ const Header = () => {
             setNavOpen(!navOpen)
           }}
         />
-      </HeaderTodo>
+      </HeaderVisible>
       <Wrapper>
         <div className={navOpen ? "navOpen" : "navClosed"}>
           <div className="Content">

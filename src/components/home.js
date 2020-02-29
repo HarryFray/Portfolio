@@ -4,6 +4,7 @@ import Gallery from "./gallery"
 import ArrowForwardIcon from "@material-ui/icons/ArrowForward"
 import { Link } from "@reach/router"
 import { useStaticQuery, graphql } from "gatsby"
+import { css } from "@emotion/core"
 
 const Home = styled(({ className }) => {
   const { allMarkdownRemark } = useStaticQuery(graphql`
@@ -23,22 +24,44 @@ const Home = styled(({ className }) => {
   `)
 
   return (
-    <div className={className}>
-      <div className="top">
-        <div className="SubHeading">
-          <h1>
-            Enjoy the process of
-            <br />
-            creating, get real results.
-          </h1>
-          <Link className="AboutMe" to="about-me">
-            <h2>More about me</h2>
-            <ArrowForwardIcon className="Icon" />
-          </Link>
+    <>
+      <Link
+        css={css`
+          position: fixed;
+          top: 30vh;
+          left: 3vw;
+          z-index: 30;
+          display: flex;
+          align-items: center;
+          padding: 20px;
+          text-decoration: none;
+          color: black;
+          @media (max-width: 450px) {
+            display: none;
+          }
+        `}
+        to="about-me"
+      >
+        <h2>More about me</h2>
+        <ArrowForwardIcon className="Icon" />
+      </Link>
+      <div className={className}>
+        <div className="top">
+          <div className="SubHeading">
+            <h1>
+              Enjoy the process of
+              <br />
+              creating, get real results.
+            </h1>
+            <Link className="AboutMe" to="about-me">
+              <h2>More about me</h2>
+              <ArrowForwardIcon className="Icon" />
+            </Link>
+          </div>
         </div>
+        <Gallery projects={allMarkdownRemark.nodes} />
       </div>
-      <Gallery projects={allMarkdownRemark.nodes} />
-    </div>
+    </>
   )
 })`
   a {
@@ -59,8 +82,10 @@ const Home = styled(({ className }) => {
 
   .SubHeading {
     .AboutMe {
+      display: block;
       margin: 12px;
       @media (min-width: 450px) {
+        display: none;
         margin-top: 100px;
       }
       text-decoration: none;

@@ -43,7 +43,7 @@ const Project = styled(({ data, className }) => {
         <BackgroundImage
           className="Image"
           fluid={data.file.childImageSharp.fluid}
-        ></BackgroundImage>
+        />
       </div>
     </Layout>
   )
