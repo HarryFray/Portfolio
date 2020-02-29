@@ -2,7 +2,12 @@
 slug: home-services-cms
 date: 2020-02-28T18:08:51.978Z
 title: Home Services CMS
-subTitle: Content management system for home brokerages
+subTitle: Content management system for home brokerage websites
+tech: 'React,Apollo,PostrgresSQL,Knex,Graphql,Merlin Page Language'
 backgroundimage: src/img_hs.jpeg
 ---
-While working on a small team at Merlin Labs I helped create a fully functioning Content Management System. This gave admin the capability of editing not only content and page layouts but also the navigation of the site. This work was highly rewarding and was well received by our client
+Created Merlin Page Language giving clients the capability of editing not only content but the layout of there own custom pages
+
+Re-factored navigation for entire site to be dynamically editable 
+
+Highly rewarding work extremely well received by all clients
