@@ -7,6 +7,7 @@ tech: >-
   React,Next,TypeScript,Apollo,Graphql,Algolia,Auth0,Circle CI,Jest,React
   Testing Library,Mapbox
 backgroundimage: src/img_merlin.jpeg
+externalLink: https://www.bhhskcrealty.com/
 ---
 Implemented tests focusing on linting, unit, and end to end testing
 
