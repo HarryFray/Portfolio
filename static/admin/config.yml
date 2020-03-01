@@ -15,7 +15,8 @@ collections:
       - { name: title, label: Title }
       - { name: subTitle, label: Sub Title}
       - { name: body, label: Body, widget: markdown }
-      - { name: tech, label: Tech}
+      - { name: tech, label: Tech }
+      - { name: externalLink, label: External Link, required: false }
       - { 
         name: backgroundimage,
         label: Featured Image,

@@ -17,6 +17,7 @@ const Home = styled(({ className }) => {
             backgroundimage
             slug
             tech
+            externalLink
           }
         }
       }

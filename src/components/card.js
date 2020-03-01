@@ -42,7 +42,14 @@ const TextBox = styled("div")`
   }
 `
 
-const Card = ({ title, subTitle, backgroundimage, slug, tech }) => {
+const Card = ({
+  title,
+  subTitle,
+  backgroundimage,
+  slug,
+  tech,
+  externalLink,
+}) => {
   const { allImageSharp } = useStaticQuery(graphql`
     query {
       allImageSharp {
@@ -69,12 +76,21 @@ const Card = ({ title, subTitle, backgroundimage, slug, tech }) => {
 
   return (
     <StyledBackgroundImage fluid={getImage(img).image.fluid} fadeIn="soft">
-      <Link to={slug} style={{ textDecoration: "none" }}>
-        <TextBox>
-          <h3>{title}</h3>
-          <h4>{subTitle}</h4>
-        </TextBox>
-      </Link>
+      {externalLink ? (
+        <a href={externalLink} style={{ textDecoration: "none" }}>
+          <TextBox>
+            <h3>{title}</h3>
+            <h4>{subTitle}</h4>
+          </TextBox>
+        </a>
+      ) : (
+        <Link to={slug} style={{ textDecoration: "none" }}>
+          <TextBox>
+            <h3>{title}</h3>
+            <h4>{subTitle}</h4>
+          </TextBox>
+        </Link>
+      )}
       <Chips tech={tech} />
     </StyledBackgroundImage>
   )
