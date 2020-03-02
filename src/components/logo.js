@@ -11,11 +11,10 @@ const Logo = styled(({ className }) => {
     </Link>
   )
 })`
+  z-index: 100;
   top: 3vw;
   text-decoration: none;
-  mix-blend-mode: difference;
   position: fixed;
-  color: white;
   left: 20px;
 
   .Harry {

@@ -25,8 +25,8 @@ const TextBox = styled("div")`
   color: white;
   background-image: linear-gradient(
     to top,
-    rgba(0, 0, 0, 0.3) 2rem,
-    rgba(0, 0, 0, 0.7)
+    rgba(0, 0, 0, 0.6) 2rem,
+    rgba(0, 0, 0, 0.6)
   );
   display: flex;
   flex-direction: column;

@@ -2,34 +2,48 @@ import React from "react"
 import styled from "styled-components"
 import Navigation from "./navigation"
 
+export const COLORS = {
+  PRIMARY: "#66FCF1",
+  SECONDARY: "#C5C6C7",
+  DARK_GREEN: "#45A29E",
+  BLACK: "#0B0C10",
+  DARK_GREY: "#1F2833",
+  LIGHT_GREY: "#C5C6C7",
+}
+
 const GlobalStyles = styled.div`
   // heading
   h1 {
+    color: ${COLORS.PRIMARY};
     font-size: 28px;
     margin: 0;
   }
   // sub heading
   h2 {
+    color: ${COLORS.SECONDARY};
     font-size: 12px;
   }
   // sub heading (greyed out)
   h3 {
-    opacity: 0.7;
+    color: ${COLORS.PRIMARY};
     font-size: 18px;
   }
   // image copy
   h4 {
+    color: ${COLORS.LIGHT_GREY};
     font-size: 24px;
     line-height: 40px;
   }
   // logo
   h5 {
+    color: ${COLORS.LIGHT_GREY};
     font-size: 24px;
     line-height: 18px;
     margin: 0px;
   }
   // All Icons
   .Icon {
+    color: ${COLORS.LIGHT_GREY};
     width: 30px;
     height: 30px;
   }

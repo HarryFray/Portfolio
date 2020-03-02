@@ -4,7 +4,6 @@ import { Link, globalHistory } from "@reach/router"
 import Logo from "./logo.js"
 import { animateScroll as scroll } from "react-scroll"
 import MenuIcon from "@material-ui/icons/Menu"
-
 import GitHubIcon from "@material-ui/icons/GitHub"
 import LinkedInIcon from "@material-ui/icons/LinkedIn"
 import YouTubeIcon from "@material-ui/icons/YouTube"
@@ -12,7 +11,7 @@ import MessageIcon from "@material-ui/icons/Message"
 
 const Wrapper = styled.div`
   .navOpen {
-    background-color: black;
+    background-color: #1F2833;
     overflow-y: hidden;    
     transition-property: all;
     transition-duration: 1s;
@@ -27,7 +26,7 @@ const Wrapper = styled.div`
   }
 
   .navClosed {
-    background-color: white;
+    background-color: #1F2833;
     height: 0;
     transition-property: all;
     transition-duration: 1s;
@@ -55,21 +54,23 @@ const Wrapper = styled.div`
   }
 
   .SocialIcons a > * {
-    color: white;
     margin: 4px 14px 0 0;
   }
 
   .Content {
     display: flex;
-    padding: 120px 0 0 24px;
+    padding: 12vh 0 0 24px;
     justify-content: space-between;
+    @media (min-width: 450px) {
+      justify-content: space-around;
+    }
+
   }
 `
 
 const HeaderVisible = styled.div`
   position: absolute;
   z-index: 50;
-  mix-blend-mode: exclusion;
 
   .MenuIcon {
     top: 2vw;

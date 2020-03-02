@@ -48,20 +48,29 @@ const Project = styled(({ data, className }) => {
     </Layout>
   )
 })`
+  position: absolute;
+  z-index: 5;
+  width: 100vw;
   .Section {
-    padding-top: 80px;
     height: 60vh;
-    background-color: white;
+    background-color: #45a29e;
     display: flex;
     flex-direction: column;
     justify-content: start;
   }
   .Image {
     height: 40vh;
+    @media (min-width: 450px) {
+      height: 50vh;
+    }
     left: 0;
     width: 100vw;
     bottom: 0;
     position: fixed !important;
+  }
+
+  h1 {
+    padding-top: 75px;
   }
 
   h1,
@@ -69,8 +78,14 @@ const Project = styled(({ data, className }) => {
     text-align: center;
   }
 
+  p {
+    margin: 4px;
+    line-height: 24px;
+    font-size: 16px;
+  }
+
   h3 {
-    margin: 0 16px;
+    margin: 0 8px;
     line-height: 32px;
     text-align: center;
     li {

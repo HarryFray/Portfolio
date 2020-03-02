@@ -10,6 +10,4 @@ backgroundimage: src/img_srorm.jpeg
 
 Designed React component structure and Redux store, integrating database queries into state
 
-Configured testing environment in command line using Jest with Enzyme to improve workflow 
-
 Connected google places api and Mapbox GL to display business information at specific locations

@@ -9,14 +9,17 @@ const NotFoundPage = () => (
     <div
       css={css`
         width: 100vw;
-        padding-top: 150px;
+        padding-top: 125px;
         text-align: center;
-        height: 300px;
-        background-color: white;
+        height: 100vh;
+        background-color: #45a29e;
+        position: absolute;
+        z-index: 25;
       `}
     >
       <h1>NOT FOUND</h1>
-      <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
+      <p>You just hit a route that doesn&#39;t exist...</p>
+      <p> yet! The sadness.</p>
     </div>
   </Layout>
 )

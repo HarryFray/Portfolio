@@ -20,6 +20,8 @@ const Chips = styled(({ className, tech }) => {
   margin: 8px;
   bottom: 0;
   .Chip {
+    background-color: #66fcf1;
+    color: #1f2833;
     padding: 2px;
     margin: 4px;
   }

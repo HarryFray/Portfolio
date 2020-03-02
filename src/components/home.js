@@ -73,8 +73,8 @@ const Home = styled(({ className }) => {
   }
 
   .top {
-    background-color: white;
-    height: 40vh;
+    background-color: #45a29e;
+    height: 50vh;
     width: 100vw;
     padding-left: 20px;
     position: absolute;
