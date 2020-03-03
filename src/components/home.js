@@ -74,7 +74,7 @@ const Home = styled(({ className }) => {
 
   .top {
     background-color: #45a29e;
-    height: 50vh;
+    height: 40vh;
     width: 100vw;
     padding-left: 20px;
     position: absolute;
@@ -95,7 +95,7 @@ const Home = styled(({ className }) => {
       align-items: center;
     }
     position: absolute;
-    top: 12vh;
+    top: 5vh;
     @media (min-width: 450px) {
       top: 18vh;
     }

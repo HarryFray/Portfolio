@@ -8,6 +8,7 @@ import GitHubIcon from "@material-ui/icons/GitHub"
 import LinkedInIcon from "@material-ui/icons/LinkedIn"
 import YouTubeIcon from "@material-ui/icons/YouTube"
 import MessageIcon from "@material-ui/icons/Message"
+import { css } from "@emotion/core"
 
 const Wrapper = styled.div`
   .navOpen {
@@ -27,11 +28,11 @@ const Wrapper = styled.div`
 
   .navClosed {
     background-color: #1F2833;
-    height: 0;
+    height: 12vh;
     transition-property: all;
     transition-duration: 1s;
     transition-timing-function: cubic-bezier(0, 1, 1, 1);
-    max-height: 0;
+    max-height: 12vh;
   }
 
   ul {
@@ -69,9 +70,10 @@ const Wrapper = styled.div`
 `
 
 const HeaderVisible = styled.div`
-  position: absolute;
-  z-index: 50;
-
+  position: fixed;
+  z-index: 10;
+  height: 12vh;
+  width: 100vw;
   .MenuIcon {
     top: 2vw;
     right: 8vw;
@@ -93,12 +95,16 @@ const Header = () => {
 
   return (
     <>
-      <HeaderVisible>
+      <HeaderVisible
+        css={css`
+          background-color: ${!true ? "#45a29e" : "#1F2833"};
+        `}
+      >
         <Logo />
         <MenuIcon
           className="MenuIcon Icon"
           onClick={() => {
-            scroll.scrollToTop()
+            // scroll.scrollToTop()
             setNavOpen(!navOpen)
           }}
         />

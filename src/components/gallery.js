@@ -11,6 +11,7 @@ const Gallery = styled(({ projects, className }) => {
     </div>
   )
 })`
+  width: 100vw;
   display: block;
   z-index: 5;
   position: absolute;

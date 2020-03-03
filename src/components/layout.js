@@ -8,7 +8,8 @@ export const COLORS = {
   DARK_GREEN: "#45A29E",
   BLACK: "#0B0C10",
   DARK_GREY: "#1F2833",
-  LIGHT_GREY: "#C5C6C7",
+  // LIGHT_GREY: "#C5C6C7",
+  LIGHT_GREY: "white",
 }
 
 const GlobalStyles = styled.div`
@@ -20,7 +21,7 @@ const GlobalStyles = styled.div`
   }
   // sub heading
   h2 {
-    color: ${COLORS.SECONDARY};
+    color: ${COLORS.LIGHT_GREY};
     font-size: 12px;
   }
   // sub heading (greyed out)

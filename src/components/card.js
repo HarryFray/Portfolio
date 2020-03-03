@@ -6,9 +6,9 @@ import { Link } from "gatsby"
 import Chips from "./chips"
 
 const StyledBackgroundImage = styled(BackgroundImage)`
-  width: 100vw;
-  height: 100vw;
-
+  width: 95vw;
+  height: 95vw;
+  margin: 0 8px 8px 10px;
   @media (min-width: 450px) {
     background-size: 50vh 50vh;
     transform: rotate(90deg);
@@ -25,8 +25,8 @@ const TextBox = styled("div")`
   color: white;
   background-image: linear-gradient(
     to top,
-    rgba(0, 0, 0, 0.6) 2rem,
-    rgba(0, 0, 0, 0.6)
+    rgba(0, 0, 0, 0.4) 2rem,
+    rgba(0, 0, 0, 0.4)
   );
   display: flex;
   flex-direction: column;
