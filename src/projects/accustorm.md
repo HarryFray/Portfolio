@@ -4,7 +4,7 @@ date: 2020-02-28T18:06:05.590Z
 title: AccuStorm
 subTitle: Visualize hail storms over property data
 tech: 'React,Mapbox GL,Redux,Jest,Enzyme,Express,MySQL'
-backgroundimage: src/img_srorm.jpeg
+backgroundimage: src/img_storm.jpeg
 ---
  Visualize hail storms over property data producing contact information in specific geographical areas.
 

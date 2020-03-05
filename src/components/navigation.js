@@ -22,8 +22,8 @@ width: 100vw;
     transition-duration: 1s;
     transition-timing-function: cubic-bezier(0, 1, 1, 1);
 
-    height: 60vh;
-    max-height: 60vh; /* approximate max height */
+    height: 100vh;
+    max-height: 100vh; /* approximate max height */
     @media (min-width: 450px) {
       height: 50vh;
       max-height: 50vh; /* approximate max height */
@@ -31,7 +31,6 @@ width: 100vw;
   }
 
   .navClosed {
-    background-color: #1F2833;
     height: 12vh;
     transition-property: all;
     transition-duration: 1s;
@@ -74,6 +73,7 @@ width: 100vw;
 `
 
 const HeaderVisible = styled.div`
+  background-color: #45a29e;
   position: fixed;
   z-index: 10;
   height: 12vh;
@@ -101,16 +101,13 @@ const Header = () => {
     <>
       <HeaderVisible
         css={css`
-          background-color: ${!true ? "#45a29e" : "#1F2833"};
+          background-color: ${navOpen ? "#1F2833" : "45a29e"};
         `}
       >
         <Logo />
         <MenuIcon
           className="MenuIcon Icon"
-          onClick={() => {
-            // scroll.scrollToTop()
-            setNavOpen(!navOpen)
-          }}
+          onClick={() => setNavOpen(!navOpen)}
         />
       </HeaderVisible>
       <Wrapper>

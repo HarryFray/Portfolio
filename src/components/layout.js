@@ -9,7 +9,7 @@ export const COLORS = {
   BLACK: "#0B0C10",
   DARK_GREY: "#1F2833",
   // LIGHT_GREY: "#C5C6C7",
-  LIGHT_GREY: "white",
+  WHITE: "#FFFFFF",
 }
 
 const GlobalStyles = styled.div`
@@ -19,10 +19,14 @@ const GlobalStyles = styled.div`
     font-size: 28px;
     margin: 0;
   }
-  // sub heading
+  // heading 2 (heading 5)
   h2 {
-    color: ${COLORS.LIGHT_GREY};
-    font-size: 12px;
+    color: ${COLORS.WHITE};
+    font-size: 24px;
+    line-height: 30px;
+    text-align: center;
+    margin: 0 20px;
+    padding-top: 56px;
   }
   // sub heading (greyed out)
   h3 {
@@ -31,22 +35,30 @@ const GlobalStyles = styled.div`
   }
   // image copy
   h4 {
-    color: ${COLORS.LIGHT_GREY};
+    color: ${COLORS.WHITE};
     font-size: 24px;
     line-height: 40px;
   }
   // logo
   h5 {
-    color: ${COLORS.LIGHT_GREY};
+    color: ${COLORS.WHITE};
     font-size: 24px;
     line-height: 18px;
     margin: 0px;
   }
   // All Icons
   .Icon {
-    color: ${COLORS.LIGHT_GREY};
+    color: ${COLORS.WHITE};
     width: 30px;
     height: 30px;
+  }
+
+  p.body1 {
+    font-size: 16px;
+    line-height: 24px;
+    color: ${COLORS.BLACK};
+    text-align: center;
+    margin: 0 20px;
   }
 
   @media (min-width: 450px) {
