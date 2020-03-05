@@ -82,6 +82,8 @@ const Home = styled(({ className }) => {
   }
 
   .SubHeading {
+    position: absolute;
+    top: 15vh;
     .AboutMe {
       display: block;
       margin: 12px;
@@ -94,8 +96,6 @@ const Home = styled(({ className }) => {
       display: flex;
       align-items: center;
     }
-    position: absolute;
-    top: 5vh;
     @media (min-width: 450px) {
       top: 18vh;
     }
