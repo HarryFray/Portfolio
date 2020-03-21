@@ -5,9 +5,9 @@ import { Link } from "gatsby"
 const Logo = styled(({ className }) => {
   return (
     <Link to="/" className={className}>
-      <h5>Nicholas</h5>
-      <h5 className="Harry">Harry</h5>
-      <h5 className="Fray">Fray</h5>
+      <p className="White-text">Nicholas</p>
+      <p className="White-text Harry">Harry</p>
+      <p className="White-text Fray">Fray</p>
     </Link>
   )
 })`
@@ -16,12 +16,15 @@ const Logo = styled(({ className }) => {
   text-decoration: none;
   position: fixed;
   left: 20px;
-
+  line-height: 0.8;
+  p {
+    margin: 0;
+  }
   .Harry {
-    margin-left: 18px;
+    margin-left: 12px;
   }
   .Fray {
-    margin-left: 30px;
+    margin-left: 19px;
   }
 
   @media (min-width: 450px) {

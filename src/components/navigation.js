@@ -43,32 +43,38 @@ width: 100vw;
     margin: 0;
     list-style: none;
     li {
-
-      padding: 8px 0;
-      color: white;
+      padding 0;
     }
-  }
-    color: white;
-    margin: 0;
   }
 
   a {
     text-decoration: none;
-    color: white;
   }
-
-  .SocialIcons a > * {
-    margin: 4px 14px 0 0;
+  
+  .SocialIcons {
+    padding: 8px 0;
+  }
+  .SocialIcons > * {
+    margin: 4px 24px 0 0;
+    .Icon {
+      width: 30px;
+      height: 30px;
+    }
   }
 
   .Content {
-    display: flex;
-    padding: 12vh 0 0 24px;
-    justify-content: space-between;
+    display: block;
+    padding: 10vh 0 0 24px;
     @media (min-width: 450px) {
       justify-content: space-around;
     }
-
+    h5 {
+      padding: 14px 0;
+      margin: 0;
+    }
+    ul:last-of-type {
+      margin-bottom: 36px;
+    }
   }
 `
 
@@ -82,7 +88,6 @@ const HeaderVisible = styled.div`
     top: 2vw;
     right: 8vw;
     position: fixed;
-    color: white;
   }
 `
 
@@ -106,7 +111,7 @@ const Header = () => {
       >
         <Logo />
         <MenuIcon
-          className="MenuIcon Icon"
+          className="MenuIcon White-text"
           onClick={() => setNavOpen(!navOpen)}
         />
       </HeaderVisible>
@@ -118,60 +123,62 @@ const Header = () => {
                 <ul>
                   <li>
                     <Link to="about-me">
-                      <h1>About Me</h1>
+                      <h5 className="Primary-text">About Me</h5>
                     </Link>
                   </li>
                   <li>
                     <Link to="404">
-                      <h1>Approach</h1>
+                      <h5 className="Primary-text">Approach</h5>
                     </Link>
                   </li>
                   <li>
                     <Link to="404">
-                      <h1>Design</h1>
+                      <h5 className="Primary-text">Design</h5>
                     </Link>
                   </li>
                   <li>
                     <Link to="404">
-                      <h1>The Code</h1>
+                      <h5 className="Primary-text">The Code</h5>
                     </Link>
                   </li>
                 </ul>
               </div>
               <div>
-                <h2>Contact</h2>
+                <p className="body2 White-text">CONTACT</p>
+                <p className="subtitle1 White-text">
+                  Email: harry.fray7@gmail.com
+                </p>
+                <p className="subtitle1 White-text">Phone: (660) 888-9796</p>
                 <div className="SocialIcons">
                   <a
                     href="https://www.linkedin.com/in/nicholas-fray-40923388/"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <LinkedInIcon className="Icon" />
+                    <LinkedInIcon className="Primary-text Icon" />
                   </a>
                   <a
                     href="https://github.com/HarryFray"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <GitHubIcon className="Icon" />
+                    <GitHubIcon className="Primary-text Icon" />
                   </a>
                   <a
                     href="https://www.youtube.com/watch?v=jxtqnUSgzrI"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <YouTubeIcon className="Icon" />
+                    <YouTubeIcon className="Primary-text Icon" />
                   </a>
                   <a
                     href="https://medium.com/@harry.fray7/regular-expressions-with-javascript-an-introduction-2142fc01db14"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <MessageIcon className="Icon" />
+                    <MessageIcon className="Primary-text Icon" />
                   </a>
                 </div>
-                <h2>Email: harry.fray7@gmail.com</h2>
-                <h2>Phone: (660) 888-9796</h2>
               </div>
             </div>
           )}

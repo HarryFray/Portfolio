@@ -49,7 +49,7 @@ const Home = styled(({ className }) => {
       <div className={className}>
         <div className="top">
           <div className="SubHeading">
-            <h1>
+            <h1 className="Primary">
               Enjoy the process of
               <br />
               creating, get real results.
@@ -92,7 +92,6 @@ const Home = styled(({ className }) => {
         margin-top: 100px;
       }
       text-decoration: none;
-      color: black;
       display: flex;
       align-items: center;
     }
