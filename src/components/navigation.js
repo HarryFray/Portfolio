@@ -11,32 +11,16 @@ import MessageIcon from "@material-ui/icons/Message"
 import { css } from "@emotion/core"
 
 const Wrapper = styled.div`
-position: fixed;
-top: 0;
-z-index:7;
-width: 100vw;
-  .navOpen {
-    background-color: #1F2833;
-    overflow-y: hidden;    
-    transition-property: all;
-    transition-duration: 1s;
-    transition-timing-function: cubic-bezier(0, 1, 1, 1);
-
-    height: 100vh;
-    max-height: 100vh; /* approximate max height */
-    @media (min-width: 450px) {
-      height: 50vh;
-      max-height: 50vh; /* approximate max height */
-    }
-  }
-
-  .navClosed {
-    height: 12vh;
-    transition-property: all;
-    transition-duration: 1s;
-    transition-timing-function: cubic-bezier(0, 1, 1, 1);
-    max-height: 12vh;
-  }
+::-webkit-scrollbar {
+  display: none;
+}
+  width: 100%;
+  height: 0;
+  position: fixed;
+  z-index: 9;
+  background-color: #1F2833;
+  overflow-x: hidden;
+  transition: 0.5s;
 
   ul {
     padding: 0;
@@ -82,7 +66,7 @@ const HeaderVisible = styled.div`
   background-color: #45a29e;
   position: fixed;
   z-index: 10;
-  height: 12vh;
+  height: 64px;
   width: 100vw;
   .MenuIcon {
     top: 2vw;
@@ -104,84 +88,78 @@ const Header = () => {
 
   return (
     <>
-      <HeaderVisible
-        css={css`
-          background-color: ${navOpen ? "#1F2833" : "45a29e"};
-        `}
-      >
+      <HeaderVisible>
         <Logo />
         <MenuIcon
           className="MenuIcon White-text"
           onClick={() => setNavOpen(!navOpen)}
         />
       </HeaderVisible>
-      <Wrapper>
-        <div className={navOpen ? "navOpen" : "navClosed"}>
-          {navOpen && (
-            <div className="Content">
-              <div>
-                <ul>
-                  <li>
-                    <Link to="about-me">
-                      <h5 className="Primary-text">About Me</h5>
-                    </Link>
-                  </li>
-                  <li>
-                    <Link to="404">
-                      <h5 className="Primary-text">Approach</h5>
-                    </Link>
-                  </li>
-                  <li>
-                    <Link to="404">
-                      <h5 className="Primary-text">Design</h5>
-                    </Link>
-                  </li>
-                  <li>
-                    <Link to="404">
-                      <h5 className="Primary-text">The Code</h5>
-                    </Link>
-                  </li>
-                </ul>
-              </div>
-              <div>
-                <p className="body2 White-text">CONTACT</p>
-                <p className="subtitle1 White-text">
-                  Email: harry.fray7@gmail.com
-                </p>
-                <p className="subtitle1 White-text">Phone: (660) 888-9796</p>
-                <div className="SocialIcons">
-                  <a
-                    href="https://www.linkedin.com/in/nicholas-fray-40923388/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <LinkedInIcon className="Primary-text Icon" />
-                  </a>
-                  <a
-                    href="https://github.com/HarryFray"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <GitHubIcon className="Primary-text Icon" />
-                  </a>
-                  <a
-                    href="https://www.youtube.com/watch?v=jxtqnUSgzrI"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <YouTubeIcon className="Primary-text Icon" />
-                  </a>
-                  <a
-                    href="https://medium.com/@harry.fray7/regular-expressions-with-javascript-an-introduction-2142fc01db14"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <MessageIcon className="Primary-text Icon" />
-                  </a>
-                </div>
-              </div>
+      <Wrapper
+        css={css`
+          height: ${navOpen ? "100%" : "0"};
+        `}
+      >
+        <div className="Content">
+          <div>
+            <ul>
+              <li>
+                <Link to="about-me">
+                  <h5 className="Primary-text">About Me</h5>
+                </Link>
+              </li>
+              <li>
+                <Link to="404">
+                  <h5 className="Primary-text">Approach</h5>
+                </Link>
+              </li>
+              <li>
+                <Link to="404">
+                  <h5 className="Primary-text">Design</h5>
+                </Link>
+              </li>
+              <li>
+                <Link to="404">
+                  <h5 className="Primary-text">The Code</h5>
+                </Link>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <p className="body2 White-text">CONTACT</p>
+            <p className="subtitle1 White-text">Email: harry.fray7@gmail.com</p>
+            <p className="subtitle1 White-text">Phone: (660) 888-9796</p>
+            <div className="SocialIcons">
+              <a
+                href="https://www.linkedin.com/in/nicholas-fray-40923388/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <LinkedInIcon className="Primary-text Icon" />
+              </a>
+              <a
+                href="https://github.com/HarryFray"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <GitHubIcon className="Primary-text Icon" />
+              </a>
+              <a
+                href="https://www.youtube.com/watch?v=jxtqnUSgzrI"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <YouTubeIcon className="Primary-text Icon" />
+              </a>
+              <a
+                href="https://medium.com/@harry.fray7/regular-expressions-with-javascript-an-introduction-2142fc01db14"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <MessageIcon className="Primary-text Icon" />
+              </a>
             </div>
-          )}
+          </div>
         </div>
       </Wrapper>
     </>

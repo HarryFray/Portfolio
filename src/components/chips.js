@@ -7,7 +7,14 @@ const Chips = styled(({ className, tech }) => {
     <div className={className}>
       {tech &&
         tech.split(",").map(tech => {
-          return <Chip size="small" className="Chip" label={tech} key={tech} />
+          return (
+            <Chip
+              size="small"
+              className="Chip"
+              label={<p className="body2 Black-text">{tech}</p>}
+              key={tech}
+            />
+          )
         })}
     </div>
   )

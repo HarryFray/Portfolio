@@ -44,19 +44,19 @@ const Home = styled(({ className }) => {
         to="about-me"
       >
         <h2>More about me</h2>
-        <ArrowForwardIcon className="Icon" />
+        <ArrowForwardIcon />
       </Link>
       <div className={className}>
         <div className="top">
           <div className="SubHeading">
-            <h1 className="Primary">
+            <h4 className="White-text">
               Enjoy the process of
               <br />
               creating, get real results.
-            </h1>
+            </h4>
             <Link className="AboutMe" to="about-me">
-              <h2>More about me</h2>
-              <ArrowForwardIcon className="Icon" />
+              <button className="Primary-text">More about me</button>
+              <ArrowForwardIcon className="Primary-text" />
             </Link>
           </div>
         </div>
@@ -74,7 +74,7 @@ const Home = styled(({ className }) => {
 
   .top {
     background-color: #45a29e;
-    height: 40vh;
+    height: 38vh;
     width: 100vw;
     padding-left: 20px;
     position: absolute;
@@ -83,7 +83,7 @@ const Home = styled(({ className }) => {
 
   .SubHeading {
     position: absolute;
-    top: 15vh;
+    top: 5vh;
     .AboutMe {
       display: block;
       margin: 12px;

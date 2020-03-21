@@ -79,15 +79,15 @@ const Card = ({
       {externalLink ? (
         <a href={externalLink} style={{ textDecoration: "none" }}>
           <TextBox>
-            <h3>{title}</h3>
-            <h4>{subTitle}</h4>
+            <p className="subtitle1 Primary-text">{title}</p>
+            <h5>{subTitle}</h5>
           </TextBox>
         </a>
       ) : (
         <Link to={slug} style={{ textDecoration: "none" }}>
           <TextBox>
-            <h3>{title}</h3>
-            <h4>{subTitle}</h4>
+            <p className="subtitle1 Primary-text">{title}</p>
+            <h5>{subTitle}</h5>
           </TextBox>
         </Link>
       )}

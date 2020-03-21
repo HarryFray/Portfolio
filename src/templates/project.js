@@ -33,7 +33,7 @@ const Project = styled(({ data, className }) => {
       <SEO title={title} description={`${subTitle} ${title} ${tech}`} />
       <div className={className}>
         <div className="Hero">
-          <h2>{subTitle}</h2>
+          <h5 className="White-text">{subTitle}</h5>
         </div>
         <Img className="Image" fluid={data.file.childImageSharp.fluid} />
         <div className="Copy">
@@ -45,17 +45,18 @@ const Project = styled(({ data, className }) => {
   )
 })`
   position: absolute;
-  top: 12vh;
   z-index: 1;
   .Hero {
     background-color: #1f2833;
     height: 280px;
+    padding-top: 88px;
+    text-align: center;
   }
 
   .Image {
     margin: 20px;
     width: calc(100vw - 40px);
-    top: -120px;
+    top: -100px;
     overflow: hidden;
   }
 
