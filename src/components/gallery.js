@@ -15,7 +15,7 @@ const Gallery = styled(({ projects, className }) => {
   display: block;
   z-index: 5;
   position: absolute;
-  margin-top: 40vh;
+  margin-top: 50vh;
   @media (min-width: 450px) {
     margin-top: 0px;
     width: 100vh;

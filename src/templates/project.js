@@ -1,9 +1,12 @@
-import React from "react"
+import React, { useRef, useEffect, useState } from "react"
 import styled from "styled-components"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { graphql } from "gatsby"
-import BackgroundImage from "gatsby-background-image"
+import Img from "gatsby-image"
+import { css } from "@emotion/core"
+import { Link } from "@reach/router"
+import ArrowForwardIcon from "@material-ui/icons/ArrowForward"
 
 export const x = graphql`
   query($slug: String!, $img: String!) {
@@ -19,87 +22,100 @@ export const x = graphql`
       childImageSharp {
         fluid {
           ...GatsbyImageSharpFluid_withWebp
+          sizes
+          presentationHeight
         }
       }
     }
   }
 `
 const Project = styled(({ data, className }) => {
+  const [imageHeight, setImageHeight] = useState(0)
   const { html, frontmatter } = data.markdownRemark
   const { title, subTitle, tech } = frontmatter
+
+  const imageRef = useRef(null)
+  useEffect(() => {
+    if (imageRef.current) {
+      setImageHeight(imageRef.current.offsetHeight)
+    }
+  }, [imageRef])
 
   return (
     <Layout>
       <SEO title={title} description={`${subTitle} ${title} ${tech}`} />
       <div className={className}>
-        <div className="Section">
-          <h1>{title}</h1>
-          <h2>{subTitle}</h2>
-          <h3
-            className="blog-post-content"
-            dangerouslySetInnerHTML={{ __html: html }}
-          />
+        <div className="Hero">
+          <h5 className="White-text">{subTitle}</h5>
         </div>
-        <BackgroundImage
-          className="Image"
-          fluid={data.file.childImageSharp.fluid}
-        />
+        <div ref={imageRef}>
+          <Img className="Image" fluid={data.file.childImageSharp.fluid} />
+        </div>
+        <div
+          className="Copy"
+          css={css`
+            top: calc(268px + ${imageHeight}px);
+          `}
+        >
+          <p className="overline">Project Details</p>
+          <p className="subtitle2">Client: </p>
+          <p className="subtitle2">Timeline: </p>
+          <p className="subtitle2">Primary Role: </p>
+          <p className="subtitle2">Contributers: </p>
+          <h6>Overview</h6>
+          <p className="body1" dangerouslySetInnerHTML={{ __html: html }} />
+          <div className="Footer">
+            <p className="subtitle1 Primary-text">Rex</p>
+            <h5 className="White-text">Tracking whatever test text</h5>
+            <Link className="AboutMe" to="about-me">
+              <button className="Primary-text">View Project</button>
+              <ArrowForwardIcon className="Primary-text" />
+            </Link>
+          </div>
+        </div>
       </div>
     </Layout>
   )
 })`
-  position: absolute;
-  z-index: 5;
-  width: 100vw;
-  .Section {
-    height: 60vh;
-    background-color: #45a29e;
-    display: flex;
-    flex-direction: column;
-    justify-content: start;
+  .Hero {
+    background-color: #1f2833;
+    height: 280px;
+    padding-top: 88px;
+    text-align: center;
+    h5 {
+      margin: 40px 20px 0 20px;
+    }
   }
+
   .Image {
-    height: 40vh;
-    @media (min-width: 450px) {
-      height: 50vh;
-    }
-    left: 0;
-    width: 100vw;
-    bottom: 0;
-    position: fixed !important;
+    margin: 20px;
+    top: -150px;
   }
 
-  h1 {
-    padding-top: 75px;
+  .Copy {
+    margin: 0 20px 20px 20px;
+    position: absolute;
+  }
+  .subtitle2 {
+    margin: 0;
   }
 
-  h1,
-  h2 {
-    text-align: center;
+  h6 {
+    margin: 30px 0 20px;
   }
 
-  p {
-    margin: 4px;
-    line-height: 24px;
-    font-size: 16px;
+  .Footer {
+    padding: 20px;
+    height: 200px;
+    background-color: #1f2833;
+    border-radius: 4px;
+    margin-top: 36px;
   }
 
-  h3 {
-    margin: 0 8px;
-    line-height: 32px;
-    text-align: center;
-    li {
-      padding-bottom: 8px;
-    }
-  }
-
-  .ScrollCTA {
-    position: fixed;
-    bottom: 0;
-    width: 100vw;
+  .AboutMe {
+    display: block;
+    text-decoration: none;
     display: flex;
-    flex-direction: column;
-    align-items: center;
   }
 `
 export default Project

@@ -8,86 +8,140 @@ export const COLORS = {
   DARK_GREEN: "#45A29E",
   BLACK: "#0B0C10",
   DARK_GREY: "#1F2833",
-  // LIGHT_GREY: "#C5C6C7",
-  LIGHT_GREY: "white",
+  LIGHT_GREY: "#C5C6C7",
+  WHITE: "#FFFFFF",
 }
 
-const GlobalStyles = styled.div`
-  // heading
-  h1 {
+const GlobalColors = styled.div`
+  .Primary-text {
     color: ${COLORS.PRIMARY};
-    font-size: 28px;
-    margin: 0;
   }
-  // sub heading
-  h2 {
+  .Secondary-text {
+    color: ${COLORS.SECONDARY};
+  }
+  .DarkGreen-text {
+    color: ${COLORS.DARK_GREEN};
+  }
+  .Black-text {
+    color: ${COLORS.BLACK};
+  }
+  .DarkGrey-text {
+    color: ${COLORS.DARK_GREY};
+  }
+  .LightGrey-text {
     color: ${COLORS.LIGHT_GREY};
-    font-size: 12px;
   }
-  // sub heading (greyed out)
-  h3 {
-    color: ${COLORS.PRIMARY};
-    font-size: 18px;
+  .White-text {
+    color: ${COLORS.WHITE};
   }
-  // image copy
-  h4 {
-    color: ${COLORS.LIGHT_GREY};
-    font-size: 24px;
-    line-height: 40px;
+  .Primary-background {
+    background: ${COLORS.PRIMARY};
   }
-  // logo
-  h5 {
-    color: ${COLORS.LIGHT_GREY};
-    font-size: 24px;
-    line-height: 18px;
-    margin: 0px;
+  .Secondary-background {
+    background: ${COLORS.SECONDARY};
   }
-  // All Icons
-  .Icon {
-    color: ${COLORS.LIGHT_GREY};
-    width: 30px;
-    height: 30px;
+  .DarkGreen-background {
+    background: ${COLORS.DARK_GREEN};
   }
+  .Black-background {
+    background: ${COLORS.BLACK};
+  }
+  .DarkGrey-background {
+    background: ${COLORS.DARK_GREY};
+  }
+  .LightGrey-background {
+    background: ${COLORS.LIGHT_GREY};
+  }
+  .White-background {
+    background: ${COLORS.WHITE};
+  }
+`
 
-  @media (min-width: 450px) {
-    // heading
-    h1 {
-      font-size: 36px;
-      margin: 0;
-    }
-    // sub heading
-    h2 {
-      font-size: 18px;
-    }
-    // sub heading (greyed out)
-    h3 {
-      font-size: 24px;
-    }
-    // image copy
-    h4 {
-      font-size: 36px;
-      line-height: 60px;
-    }
-    // logo
-    h5 {
-      font-size: 36px;
-      line-height: 26px;
-      margin: 0px;
-    }
-    // All Icons
-    .Icon {
-      width: 40px;
-      height: 40px;
-    }
+const GlobalTypography = styled.div`
+  // HEADING 1
+  h1 {
+    font-size: 96px;
+    line-height: 120px;
+    letter-spacing: -1.5px;
+  }
+  // HEADING 2
+  h2 {
+    font-size: 60px;
+    line-height: 74px;
+    letter-spacing: -0.5px;
+  }
+  // HEADING 3
+  h3 {
+    font-size: 48px;
+    line-height: 60px;
+  }
+  // HEADING 4
+  h4 {
+    font-size: 34px;
+    line-height: 42px;
+  }
+  // HEADING 5
+  h5 {
+    font-size: 24px;
+    line-height: 30px;
+  }
+  // HEADING 6
+  h6 {
+    font-size: 20px;
+    line-height: 25px;
+    letter-spacing: 0.15px;
+  }
+  // BODY 1
+  p.body1 {
+    font-size: 16px;
+    line-height: 24px;
+  }
+  // BODY 2
+  p.body2 {
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0.25px;
+  }
+  // SUBTITLE 1
+  p.subtitle1 {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0.15px;
+  }
+  // SUBTITLE 2
+  p.subtitle2 {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 24px;
+    letter-spacing: 0.1px;
+  }
+  // BUTTON
+  button {
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 16px;
+    display: flex;
+    align-items: center;
+    text-transform: capitalize;
+  }
+  // OVERLINE
+  p.overline {
+    font-size: 10px;
+    line-height: 16px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
   }
 `
 
 const Layout = ({ children }) => {
   return (
-    <GlobalStyles>
-      <Navigation />
-      <main>{children}</main>
-    </GlobalStyles>
+    <GlobalTypography>
+      <GlobalColors>
+        <Navigation />
+        <main>{children}</main>
+      </GlobalColors>
+    </GlobalTypography>
   )
 }
 
