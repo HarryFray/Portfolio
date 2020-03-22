@@ -109,6 +109,13 @@ const GlobalTypography = styled.div`
     line-height: 24px;
     letter-spacing: 0.15px;
   }
+  // SUBTITLE 2
+  p.subtitle2 {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 24px;
+    letter-spacing: 0.1px;
+  }
   // BUTTON
   button {
     font-weight: 600;
@@ -117,6 +124,13 @@ const GlobalTypography = styled.div`
     display: flex;
     align-items: center;
     text-transform: capitalize;
+  }
+  // OVERLINE
+  p.overline {
+    font-size: 10px;
+    line-height: 16px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
   }
 `
 

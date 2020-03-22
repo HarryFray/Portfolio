@@ -1,9 +1,10 @@
-import React from "react"
+import React, { useRef, useEffect, useState } from "react"
 import styled from "styled-components"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { graphql } from "gatsby"
 import Img from "gatsby-image"
+import { css } from "@emotion/core"
 
 export const x = graphql`
   query($slug: String!, $img: String!) {
@@ -19,14 +20,24 @@ export const x = graphql`
       childImageSharp {
         fluid {
           ...GatsbyImageSharpFluid_withWebp
+          sizes
+          presentationHeight
         }
       }
     }
   }
 `
 const Project = styled(({ data, className }) => {
+  const [imageHeight, setImageHeight] = useState(0)
   const { html, frontmatter } = data.markdownRemark
   const { title, subTitle, tech } = frontmatter
+
+  const imageRef = useRef(null)
+  useEffect(() => {
+    if (imageRef.current) {
+      setImageHeight(imageRef.current.offsetHeight)
+    }
+  }, [imageRef])
 
   return (
     <Layout>
@@ -35,38 +46,60 @@ const Project = styled(({ data, className }) => {
         <div className="Hero">
           <h5 className="White-text">{subTitle}</h5>
         </div>
-        <Img className="Image" fluid={data.file.childImageSharp.fluid} />
-        <div className="Copy">
-          <p className="body1" dangerouslySetInnerHTML={{ __html: html }} />
+        <div ref={imageRef}>
+          <Img className="Image" fluid={data.file.childImageSharp.fluid} />
         </div>
-        <div className="Footer"></div>
+        <div
+          className="Copy"
+          css={css`
+            top: calc(268px + ${imageHeight}px);
+          `}
+        >
+          <p className="overline">Project Details</p>
+          <p className="subtitle2">Client: </p>
+          <p className="subtitle2">Timeline: </p>
+          <p className="subtitle2">Primary Role: </p>
+          <p className="subtitle2">Contributers: </p>
+          <h6>Overview</h6>
+          <p className="body1" dangerouslySetInnerHTML={{ __html: html }} />
+          <div className="Footer"></div>
+        </div>
       </div>
     </Layout>
   )
 })`
-  position: absolute;
-  z-index: 1;
   .Hero {
     background-color: #1f2833;
     height: 280px;
     padding-top: 88px;
     text-align: center;
+    h5 {
+      margin: 40px 20px 0 20px;
+    }
   }
 
   .Image {
     margin: 20px;
-    width: calc(100vw - 40px);
-    top: -100px;
-    overflow: hidden;
+    top: -150px;
   }
 
   .Copy {
-    background-color: white;
+    margin: 0 20px 20px 20px;
+    position: absolute;
+  }
+  .subtitle2 {
+    margin: 0;
+  }
+
+  h6 {
+    margin: 30px 0 20px;
   }
 
   .Footer {
     height: 200px;
     background-color: #1f2833;
+    border-radius: 4px;
+    margin-top: 36px;
   }
 `
 export default Project
