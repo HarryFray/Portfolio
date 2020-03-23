@@ -2,7 +2,7 @@
 slug: portfolio
 client: Yours truly
 timeline: Jan 2020 - Present
-primaryRole: Designer/Engineer
+primaryRole: Designer / Engineer
 contributers: Nicholas Fray
 date: 2020-02-28T23:13:36.001Z
 title: My portfolio site
