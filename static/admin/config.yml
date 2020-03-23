@@ -15,7 +15,6 @@ collections:
       - { name: timeline, label: Timeline }
       - { name: primaryRole, label: Primary Role }
       - { name: contributers, label: Contributers }
-      - { name: date, label: Date, widget: datetime }
       - { name: title, label: Title }
       - { name: subTitle, label: Sub Title}
       - { name: body, label: Body, widget: markdown }

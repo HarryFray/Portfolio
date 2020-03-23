@@ -14,7 +14,10 @@ export const query = graphql`
       frontmatter {
         title
         subTitle
-        tech
+        client
+        timeline
+        primaryRole
+        contributers
       }
       html
     }
@@ -44,7 +47,14 @@ const Project = styled(({ data, className }) => {
   const imageRef = useRef(null)
 
   const { html, frontmatter } = data.markdownRemark
-  const { title, subTitle, tech } = frontmatter // add typical new feilds here
+  const {
+    title,
+    subTitle,
+    client,
+    timeline,
+    primaryRole,
+    contributers,
+  } = frontmatter // add typical new feilds here
   const { allProjects } = data.allMarkdownRemark
 
   // chooses next viewable project
@@ -69,7 +79,7 @@ const Project = styled(({ data, className }) => {
 
   return (
     <Layout>
-      <SEO title={title} description={`${subTitle} ${title} ${tech}`} />
+      <SEO title={title} description={`${subTitle} ${title}`} />
       <div className={className}>
         <div className="Hero">
           <h5 className="White-text">{subTitle}</h5>
@@ -84,10 +94,19 @@ const Project = styled(({ data, className }) => {
           `}
         >
           <p className="overline">Project Details</p>
-          <p className="subtitle2">Client: </p>
-          <p className="subtitle2">Timeline: </p>
-          <p className="subtitle2">Primary Role: </p>
-          <p className="subtitle2">Contributers: </p>
+          <p className="subtitle2">
+            <strong>Client: </strong>
+            {client}
+          </p>
+          <p className="subtitle2">
+            <strong>Timeline: </strong> {timeline}
+          </p>
+          <p className="subtitle2">
+            <strong>Primary Role: </strong> {primaryRole}
+          </p>
+          <p className="subtitle2">
+            <strong>Contributers: </strong> {contributers}
+          </p>
           <h6>Overview</h6>
           <p className="body1" dangerouslySetInnerHTML={{ __html: html }} />
           <div className="Footer">
