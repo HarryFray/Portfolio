@@ -8,7 +8,7 @@ import { css } from "@emotion/core"
 import { Link } from "@reach/router"
 import ArrowForwardIcon from "@material-ui/icons/ArrowForward"
 
-export const x = graphql`
+export const query = graphql`
   query($slug: String!, $img: String!) {
     markdownRemark(frontmatter: { slug: { eq: $slug } }) {
       frontmatter {
@@ -27,14 +27,40 @@ export const x = graphql`
         }
       }
     }
+    allMarkdownRemark {
+      allProjects: nodes {
+        frontmatter {
+          title
+          subTitle
+          slug
+        }
+      }
+    }
   }
 `
 const Project = styled(({ data, className }) => {
   const [imageHeight, setImageHeight] = useState(0)
-  const { html, frontmatter } = data.markdownRemark
-  const { title, subTitle, tech } = frontmatter
-
+  const [nextProject, setNextProject] = useState({ slug: "" })
   const imageRef = useRef(null)
+
+  const { html, frontmatter } = data.markdownRemark
+  const { title, subTitle, tech } = frontmatter // add typical new feilds here
+  const { allProjects } = data.allMarkdownRemark
+
+  // chooses next viewable project
+  useEffect(() => {
+    for (let i = 0; i < allProjects.length; i++) {
+      if (i === allProjects.length - 1) {
+        setNextProject(allProjects[0].frontmatter)
+        return
+      } else if (allProjects[i].frontmatter.title === title) {
+        setNextProject(allProjects[i + 1].frontmatter)
+        return
+      }
+    }
+  }, [allProjects, title])
+
+  // gets image height to ensure copy apears in correct location
   useEffect(() => {
     if (imageRef.current) {
       setImageHeight(imageRef.current.offsetHeight)
@@ -65,9 +91,9 @@ const Project = styled(({ data, className }) => {
           <h6>Overview</h6>
           <p className="body1" dangerouslySetInnerHTML={{ __html: html }} />
           <div className="Footer">
-            <p className="subtitle1 Primary-text">Rex</p>
-            <h5 className="White-text">Tracking whatever test text</h5>
-            <Link className="AboutMe" to="about-me">
+            <p className="subtitle1 Primary-text">{nextProject.title}</p>
+            <h5 className="White-text">{nextProject.subTitle}</h5>
+            <Link className="AboutMe" to={nextProject.slug}>
               <button className="Primary-text">View Project</button>
               <ArrowForwardIcon className="Primary-text" />
             </Link>
@@ -106,10 +132,15 @@ const Project = styled(({ data, className }) => {
 
   .Footer {
     padding: 20px;
-    height: 200px;
     background-color: #1f2833;
     border-radius: 4px;
     margin-top: 36px;
+    h5 {
+      margin: 20px 0;
+    }
+    p {
+      margin-top: 10px;
+    }
   }
 
   .AboutMe {
