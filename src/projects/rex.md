@@ -1,5 +1,9 @@
 ---
 slug: rex
+client: Hack Reactor
+timeline: March 2018 - May 2018
+primaryRole: Software Developer
+contributers: 'Anjali Ahuja, Nick Fredman, Nicholas Fray'
 date: 2020-02-28T18:04:51.393Z
 title: Rex
 subTitle: 'Recommendation tracking for songs, books, and food'
