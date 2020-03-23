@@ -1,16 +1,24 @@
 ---
 slug: kansas-city-reality
+client: 'Merlin Labs / Home Services of America '
+timeline: October 2018 - July 2019
+primaryRole: Technical Support Engineer
+contributers: 'Bennet Staley, David Fells, Cecilia Cisneros, Nicholas Fray'
 date: 2020-02-28T18:07:12.299Z
 title: Kansas City Reality
 subTitle: All in one site for purchasing homes in KC
 tech: >-
   React,Next,TypeScript,Apollo,Graphql,Algolia,Auth0,Circle CI,Jest,React
   Testing Library,Mapbox
+externalLink: 'https://www.bhhskcrealty.com/'
 backgroundimage: src/img_merlin.jpeg
-externalLink: https://www.bhhskcrealty.com/
 ---
-Implemented tests focusing on linting, unit, and end to end testing
+Real estate platform that guides people through the homeownership journey and connects them with the right experts
 
-Created a configurable filtering system for the search page capable of filtering over 20 fields
+Identified root causes of systemic issues across codebase often leading to large refactors and discussions around reasons for tech choices 
 
-Consolidated contact forms across site improving speed of development
+Proposed/Implemented new user-focused testing paradigm reducing bugs
+
+Communicated often with BQA, Design, and PD ensuring alignment across teams
+
+Consolidated search page files for a more enhanceable search experience
