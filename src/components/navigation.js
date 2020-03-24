@@ -63,6 +63,7 @@ const Wrapper = styled.div`
 `
 
 const HeaderVisible = styled.div`
+  top: 0;
   background-color: #45a29e;
   position: fixed;
   z-index: 10;
@@ -114,8 +115,8 @@ const Header = () => {
                 </Link>
               </li>
               <li>
-                <Link to="404">
-                  <h5 className="Primary-text">Design</h5>
+                <Link to="resume">
+                  <h5 className="Primary-text">Resume</h5>
                 </Link>
               </li>
               <li>
